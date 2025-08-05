@@ -26,6 +26,7 @@ class SearchItem extends StatelessWidget {
                   child: ClipRRect(
                     borderRadius: BorderRadius.circular(16),
                     child: CachedNetworkImage(
+                      errorWidget: (context, url, error) => const Icon(Icons.error),
                       imageUrl: book.volumeInfo.imageLinks?.thumbnail ?? '',
                       fit: BoxFit.fill,
                     ),
