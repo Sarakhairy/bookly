@@ -5,11 +5,14 @@ class CutomeButton extends StatelessWidget {
   final Color backgroundColor;
   final Color textColor;
   final BorderRadius borderRadius;
+  final void Function()? onPressed;
   const CutomeButton({
     super.key,
     required this.backgroundColor,
     required this.textColor,
-    required this.borderRadius, required this.text,
+    required this.borderRadius,
+    required this.text,
+     this.onPressed,
   });
 
   @override
@@ -17,7 +20,7 @@ class CutomeButton extends StatelessWidget {
     return SizedBox(
       height: 48,
       child: TextButton(
-        onPressed: () {},
+        onPressed: onPressed,
         style: TextButton.styleFrom(
           backgroundColor: backgroundColor,
           shape: RoundedRectangleBorder(borderRadius: borderRadius),
@@ -28,7 +31,6 @@ class CutomeButton extends StatelessWidget {
             fontWeight: FontWeight.w600,
             fontSize: 16,
             color: textColor,
-            
           ),
         ),
       ),
